@@ -36,9 +36,9 @@ class ClientAuthInterceptor(
             requestBuilder.addHeader("Authorization",
                     "Bearer ${authTokenDataSource.authToken}")
         } else {
-            val url = chain.request().url.newBuilder()
-                    .addQueryParameter("client_id", clientId).build()
-            requestBuilder.url(url)
+//            val url = chain.request().url.newBuilder()
+//                    .addQueryParameter("client_id", clientId).build()
+//            requestBuilder.url(url)
         }
         return chain.proceed(requestBuilder.build())
     }
